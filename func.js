@@ -148,6 +148,8 @@ tapperc.onclick =()=>{
  document.getElementById("text1").value += num11;
 };
 
+
+
 // multi =()=>{
 // let num11 =  tapnum;
 // let num22 = tapnum;

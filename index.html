@@ -10,35 +10,43 @@
 <title>Calculator</title>
 </head>
 <body>
-   <div class="text-div"> 
-   <div class="text-center">   
+   <div class="text-div text-center"> 
+   <!-- <div class="text-center">    -->
     <h2>Calculator</h2>
-    <!-- <input type="text" name="text" alt="Value" id="text1"><br><br> -->
-    <textarea id="text1"></textarea>
-    <input type="button" name="btn" id="Lbr" alt="left brace" value="(">
-    <input type="button" name="btn" id="Rbr" alt="right brace" value=")">
-    <input type="button" name="text" alt="percentage" id="perc" value="%">
-    <input type="button" name="btn" id="Del" alt="Delete" value="CE"><br><br>
+    <input type="text" name="text" class="calculator-screen" alt="Value" id="text1"><br><br>
+    <!-- <textarea id="text1"></textarea> -->
+    <div class="calculator-keys">
+    <button type="button" class="operator" name="btn" id="Lbr" alt="left brace" value="(">(</button>
+    <button type="button" class="operator" name="btn" id="Rbr" alt="right brace" value=")">)</button>
+    <button type="button"class="operator" name="text" alt="percentage" id="perc" value="%">%</button>
+    <button class="del" type="button" name="btn" id="Del" alt="Delete" value="CE">CE</button><br><br>
     
-  <input type="button" name="btn" id="1" value="1">
-    <input type="button" name="btn" id="2" value="2">
-    <input type="button" name="btn" id="3" value="3"> 
-    <input type="button" name="btn" id="plus" alt="addition" value="+"><br><br>
-    <input type="button" name="btn" id="4" value="4">
-    <input type="button" name="btn" id="5" value="5">
-    <input type="button" name="btn" id="6" value="6">
-    <input type="button" name="btn" id="minus" alt="subtraction" value="-"><br><br>
-    <input type="button" name="btn" id="7" value="7">
-    <input type="button" name="btn" id="8" value="8">
-    <input type="button" name="btn" id="9" value="9">
-    <input type="button" name="btn" id="mult" alt="multiplication" value="x"><br><br>
-    <input type="button" name="btn" id="0" value="0">
+  <button type="button" name="btn" id="1" value="1">1</button>
+    <button type="button" name="btn" id="2" value="2">2</button>
+    <button type="button" name="btn" id="3" value="3"> 3</button>
+    <button type="button" class="operator" name="btn" id="plus" alt="addition" value="+">+</button><br><br>
+    <button type="button" name="btn" id="4" value="4">4</button>
+    <button type="button" name="btn" id="5" value="5">5</button>
+    <button type="button" name="btn" id="6" value="6">6</button>
+    <button type="button" class="operator" name="btn" id="minus" alt="subtraction" value="-">-</button><br><br>
+    <button type="button" name="btn" id="7" value="7">7</button>
+    <button type="button" name="btn" id="8" value="8">8</button>
+    <button type="button" name="btn" id="9" value="9">9</button>
+    <button type="button" class="operator" name="btn" id="mult" alt="multiplication" value="x">x</button><br><br>
+    <button type="button" name="btn" id="0" value="0">0</button>
    <!-- // <button id="num" value="0">0</button> -->
-    <input type="button" name="btn" id="point" value=".">
-    <input type="button" name="btn" id="point" value="=">
-    <input type="button" name="btn" id="div" alt="division" value="&#247">
+    <button type="button" class="operator" name="btn" id="point" value=".">.</button>
+    <button type="button" name="btn" class="equalsign" id="point" value="=">=</button>
+    <button type="button" class="operator" name="btn" id="div" alt="division" value="&#247">&#247</button>
 </div>
 </div>
+<br>
+<div class="func">
+<input type="button" class="btn" name="change" id="123" value="123">
+<input type="button" class="btn" style="border-left:1px solid navy" name="change" id="fx" value="fx">
+</div>
+
+
 <script src="func.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
