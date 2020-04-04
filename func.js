@@ -12,7 +12,7 @@ let tapnum2 = document.getElementById("2");
 tapnum2.onclick =()=>{
  
  let num11 = Number(document.getElementById("2").value);
- document.getElementById("text1").value += num11;
+  document.getElementById("text1").value += num11;
 };
 
 

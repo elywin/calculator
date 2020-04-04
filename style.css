@@ -73,12 +73,14 @@ button:hover {
     border: none;
     outline: none;
     height: 35px;
+    
+    
  }
 
  .func{
     border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100px;
+    border-radius: 30px;
+    width: 95px;
     margin: auto;  
     bottom: 5%;
    position: absolute;
@@ -89,4 +91,5 @@ button:hover {
  }
  .btn:hover{
     background-color: #2e86c0;
+    border-radius: 30px;
  }
