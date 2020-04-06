@@ -1,4 +1,42 @@
+//create calculator object holding data to constract valid expression
+const calculator ={
+  displayValue:'0',
+  firstOperand:null,
+  waitingForSecondOperand:false,
+  operator:null,
+};
 
+//created a function updateDisplay to display value on the calculator screen
+updateDisplay=()=>{
+  const display = document.querySelector('.calculator-screen');
+  display.value = calculator.displayValue;
+}
+//call the function
+updateDisplay();
+
+const keys= document.querySelector('.calculator-keys');
+keys.addEventListener('click',(event)=>{
+  const{target} =event;
+  if(!target.matches('button')){
+    return;
+  }
+  if(target.classList.contains('operator')){
+    console.log('operator',target.value);
+    return;
+  }
+
+  if(target.classList.contains('decimal')){
+    console.log('decimal',target.value);
+    return;
+  }
+
+  if(target.classList.contains('all-clear')){
+    console.log('clear',target.value);
+    return;
+  }
+
+  console.log('digit',target.value);
+});
 //number 1
 let tapnum1 = document.getElementById("1");
 tapnum1.onclick =()=>{
