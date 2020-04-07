@@ -8,9 +8,16 @@ const calculator ={
 
 // function to display values of clicked buttons.
 inputDigit = (digit)=>{
-  const{displayValue} = calculator;
-  //overwriting displayValue if current value is 0 otherwise append it 
+  const{displayValue,waitingForSecondOperand} = calculator;
+  if(waitingForSecondOperand===true){
+    calculator.displayValue=digit;
+    calculator.waitingForSecondOperand = false;
+  }else{
+         //overwriting displayValue if current value is 0 otherwise append it 
   calculator.displayValue = displayValue ==='0'? digit : displayValue + digit;
+  }
+  
+console.log(calculator);
 }
 
 //function to input decimal point
@@ -20,6 +27,40 @@ inputDecimal = (dot)=>{
     //append the decimal point
     calculator.displayValue += dot;
   }
+}
+
+//function to handle operators
+handleOperator=(nextOperator)=>{
+  const{firstOperand,displayValue,operator} = calculator
+  const inputValue = parseFloat(displayValue);
+  if(firstOperand==null){
+    calculator.firstOperand = inputValue;
+  }else if (operator){
+      const result = performCalculation[operator](firstOperand,inputValue);
+      calculator.displayValue = String(result);
+      calculator.firstOperand = result;
+  }
+    calculator.waitingForSecondOperand = true;
+    calculator.operator = nextOperator;
+    console.log(calculator);
+}
+
+//object to perform calculation
+const performCalculation = {
+  '/': (firstOperand,secondOperand) => firstOperand / secondOperand,
+  '*':(firstOperand,secondOperand) => firstOperand * secondOperand,
+  '+':(firstOperand,secondOperand) => firstOperand + secondOperand,
+  '-':(firstOperand,secondOperand) => firstOperand - secondOperand,
+  '=':(firstOperand,secondOperand) => secondOperand
+};
+
+//function to reset the calculator back to 0
+resetCalculator=()=>{
+  calculator.displayValue = '0';
+  calculator.firstOperand = null;
+  calculator.waitingForSecondOperand =false;
+  calculator.operator = null;
+  console.log(calculator);
 }
 
 // function updateDisplay to display value on the calculator screen
@@ -40,6 +81,8 @@ keys.addEventListener('click',(event)=>{
   }
   if(target.classList.contains('operator')){
     console.log('operator',target.value);
+    handleOperator(target.value);
+    updateDisplay();
     return;
   }
 
@@ -52,6 +95,8 @@ keys.addEventListener('click',(event)=>{
 
   if(target.classList.contains('all-clear')){
     console.log('clear',target.value);
+    resetCalculator();
+    updateDisplay();
     return;
   }
 
