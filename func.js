@@ -22,6 +22,7 @@ console.log(calculator);
 
 //function to input decimal point
 inputDecimal = (dot)=>{
+  if(calculator.waitingForSecondOperand===true) return;
   //if the displayValue does not contain a decimal point
   if(!calculator.displayValue.includes(dot)){
     //append the decimal point
